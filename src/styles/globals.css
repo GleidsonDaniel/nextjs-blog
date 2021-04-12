@@ -4,6 +4,6 @@
 
 @layer base {
   a {
-    @apply text-blue-600 hover:text-blue-400;
+    @apply text-gray-800 hover:text-gray-600;
   }
 }
