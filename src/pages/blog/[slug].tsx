@@ -1,3 +1,6 @@
+import format from "date-fns/format";
+import { ptBR } from "date-fns/locale";
+import parseISO from 'date-fns/parseISO';
 import { blogPosts } from "helpers/data";
 import Head from "next/head";
 
@@ -11,7 +14,9 @@ export default function BlogPage({ title, date, content }) {
 
       <main>
         <h1>{title}</h1>
-        <div>{date}</div>
+        <div>
+          {format(parseISO(date), "dd 'de' MMMM 'de' uuu", { locale: ptBR })}
+        </div>
         <div>{content}</div>
       </main>
     </div>

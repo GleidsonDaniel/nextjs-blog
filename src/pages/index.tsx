@@ -1,5 +1,6 @@
 import format from "date-fns/format";
 import { ptBR } from "date-fns/locale";
+import parseISO from "date-fns/parseISO";
 import { blogPosts } from "helpers/data";
 import Head from "next/head";
 import Link from "next/link";
@@ -29,7 +30,7 @@ function BlogListItem({ slug, title, date, content }) {
         </Link>
       </div>
       <div className="text-gray-800 text-sm">
-        {format(date, "dd 'de' MMMM 'de' uuu", { locale: ptBR })}
+        {format(parseISO(date), "dd 'de' MMMM 'de' uuu", { locale: ptBR })}
       </div>
       <div>{content}</div>
     </div>
